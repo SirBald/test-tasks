@@ -6,7 +6,7 @@
     {
       "label": "Build Project",
       "type": "shell",
-      "command": "cd build/ && g++ -std=c++17 -Wall -Werror -Wextra -Wpedantic ${file} -o ${fileBasenameNoExtension}",
+      "command": "cd ${fileDirname}/build/ && g++ -std=c++17 -Wall -Werror -Wextra -Wpedantic ${file} -o ${fileBasenameNoExtension}",
       "group": {
         "kind": "build",
         "isDefault": true
