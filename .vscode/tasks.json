@@ -4,9 +4,37 @@
   "version": "2.0.0",
   "tasks": [
     {
+      "label": "Clean Project",
+      "type": "shell",
+      "command": "rm -rf ${fileDirname}/build/*",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
+      "label": "Configure Project",
+      "type": "shell",
+      "command": "mkdir -p ${fileDirname}/build && cd ${fileDirname}/build/ && cmake ..",
+      "group": "build",
+      "presentation": {
+        "echo": true,
+        "reveal": "always",
+        "focus": true,
+        "panel": "dedicated",
+        "showReuseMessage": true,
+        "clear": true
+      }
+    },
+    {
       "label": "Build Project",
       "type": "shell",
-      "command": "cd ${fileDirname}/build/ && g++ -std=c++17 -Wall -Werror -Wextra -Wpedantic ${file} -o ${fileBasenameNoExtension}",
+      "command": "cd ${fileDirname}/build/ && make",
       "group": {
         "kind": "build",
         "isDefault": true
